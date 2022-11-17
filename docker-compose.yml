@@ -1,4 +1,4 @@
-verison: '3'
+version: "3"
 services:
   
   express:
@@ -13,7 +13,7 @@ services:
     ports:
       - "3002:80"
   
-  pyton:
+  python:
     image: python
     build: ./py/.venv
     ports:
