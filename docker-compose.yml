@@ -1,0 +1,30 @@
+verison: '3'
+services:
+  
+  express:
+    image: express
+    build: ./ex
+    ports:
+      - "3001:3000"
+
+  php:
+    image: php
+    build: ./ph
+    ports:
+      - "3002:80"
+  
+  pyton:
+    image: python
+    build: ./py/.venv
+    ports:
+      - "3003:5000"
+  
+  react:
+    image: react
+    build: ./randoms
+    ports:
+      - "3000:3000"
+    environment:
+      - EXPRESS_APP_PORT=3001
+      - PHP_APP_PORT=3002
+      - PYTHON_APP_PORT=3003
